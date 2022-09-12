@@ -5,7 +5,7 @@ __author__ = "730560669"
 # declared variables 
 secret_word: str = "python"
 secret_word_length: int = (len(secret_word))
-guess_word: str = input(f"What is your {secret_word_length}-letter word?: ")
+guess_word: str = input(f"What is your {secret_word_length}-letter word? ")
 guess_word_length: int = len(guess_word)
 
 guess_string = ""  # variable for emoji boxes 
@@ -22,6 +22,11 @@ j: int = 0
 # boolean expression for yellow box 
 yellow_character = False
 
+# loop sequence to get guess
+while guess_word_length != secret_word_length:
+    guess_word = input(f"That was not {secret_word_length} letters! Try again:")
+    guess_word_length = len(guess_word)
+
 # main while loop that gives the emoji boxes 
 while i < secret_word_length:
     if guess_word[i] == secret_word[i]:
@@ -37,18 +42,11 @@ while i < secret_word_length:
             guess_string += WHITE 
         yellow_character = False
     i = i + 1
-    j=0
+    j = 0
 print(guess_string)
-
-# loop sequence to get guess
-while guess_word_length != secret_word_length:
-    guess_word: str = input(f"That was not {secret_word_length} letters! Try again:")
-    guess_word_length: int = len(guess_word)
-
 
 # tells reader if guess is correct
 if guess_word != secret_word:
-    print("Not quite. Play again soon!")
-    exit()
+    print("Not quite. Play again soon! ")
 if guess_word == secret_word:
     print("Woo! You got it!")
