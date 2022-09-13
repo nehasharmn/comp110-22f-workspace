@@ -2,8 +2,9 @@
 
 __author__ = "730560669"
 
+# contains_char function definition
 def contains_char(search_2nd: str, single_character: str)-> bool:
-    """this while loop takes a string of any length and matches a character to it's indicies using a declaration"""
+    """this while loop takes a string of any length and matches a single character string to it's indicies using a declaration"""
     assert len(single_character) == 1 
     i: int = 0
     j: int = 0
@@ -25,3 +26,21 @@ def contains_char(search_2nd: str, single_character: str)-> bool:
                 return False
          
     print() 
+# emojified function definition 
+def emojified(guess: str, secret: str)-> str:
+    assert len(guess) == len(secret)
+    WHITE: str = "\U00002B1C"
+    GREEN: str = "\U0001F7E9"
+    YELLOW: str = "\U0001F7E8"
+    guess_string = ""
+    i = 0
+    while i < len(secret):
+        if guess[i] == secret[i]:
+            guess_string += GREEN
+        elif contains_char(secret, guess[i]) is True:
+            guess_string += YELLOW
+        else:
+            guess_string += WHITE
+        i = i + 1
+    return guess_string
+print()
