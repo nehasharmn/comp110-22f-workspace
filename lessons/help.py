@@ -2,7 +2,7 @@
 
 __author__ = "730560669"
 
-
+print("hello")
 def contains_char(search_2nd: str, single_character: str) -> bool: 
     """This while loop takes a string of any length and matches a single character string to it's indicies using a declaration."""
     assert len(single_character) == 1 

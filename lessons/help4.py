@@ -1,53 +1,53 @@
+"""Notes and examples of Tuple and range sequence types."""
+
+# Declaring a type alias that "invents the Point2D type"
+
+# camel casing 
+from secrets import randbits
+from tracemalloc import start
 
 
-from exercises.ex05.utils import only_evens
+Point2D = tuple[float,float]
 
-# edge case
-def test_only_evens_empty() -> None:
-    xs: list[int] = []
-    assert only_evens(xs) == []
+start_position: Point2D = (5.0,10.0)
+start_position = (start_position[0] + 5.0, start_position[1] + 10.0)
+end_position: Point2D = (99.0,99.0)
+print(start_position)
 
+# tuples, because they are a sequence, are 0-indexed 
 
-# use case
-def test_only_evens_all_odds() -> None:
-    xs: list[int] = [1,1,1]
-    assert only_evens(xs) == []
+print(start_position[0])
 
 
-# use case 
-def test_only_evens_only_one_even() -> None:
-    xs: list[int] = [1,2,3]
-    assert only_evens(xs) == [2]
+# Examples of ranges 
+a_range: range = range(0,10,3)
+# access its items:
+print(a_range[0])
+print(a_range[1])
+print(len(a_range))
 
-from exercises.ex05.utils import concat
-# edge case 
-def test_concat_empty()-> None:
-    xs: list [int] = []
-    bs: list [int] = []
-    assert concat(xs,bs) == []
+for i in a_range:
+    print(i)
 
-# use case
-def test_concat_one_list_longer() -> None:
-    xs: list [int] = [1,2,3,4]
-    bs: list [int] = [2,1]
-    assert concat(xs,bs) == [1,2,3,4,2,1]
+# a an example of using default parameter step 
+# where the default step is 1 
 
-# use case
-def test_concat_one_list_empty() -> None:
-    xs: list [int] = []
-    bs: list [int] = [2,1]
-    assert concat(xs,bs) == [2,1]
+another_range: range = range(0,10)
 
-from lessons.help_pt3 import sub 
+# if you only pass one argument to range it specifies
+# the stop marker and start is 0 by default 
+zero_start: range = range(10)
 
-def test_sub_empty() -> None: 
-    a_list: list[int] = []
-    assert sub(a_list, 0, 0) == []
+for x in zero_start: 
+    print(x)
 
-def test_sub_start_index_negative() -> None:
-    a_list: list [int] = [10,20,30,40,50]
-    assert sub(a_list, -1, 4) == [10,20,30,40]
+names: list[str] = ["Kris","Alyssa","Ben"]
+for name in names:
+    print(name)
 
-def test_sub_end_index_greater() -> None:
-    a_list: list[int] = [10,20,30]
-    assert sub(a_list, 1, 3) == [20,30]
+# Range is often used to write for loops where 
+# your iteration patter is not consectutive 
+print("Every other")
+for i in range(0,len(names), 2):
+    print(names[i])
+

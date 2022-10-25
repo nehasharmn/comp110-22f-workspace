@@ -1,4 +1,4 @@
-"""Welcome to buzzfeed quiz <3!"""
+"""Welcome to buzzfeed quiz <3"""
 
 __author__ = "730560669"
 
@@ -17,44 +17,31 @@ WHEAT: str = "\U0001F33E"
 HONEY: str = "\U0001F36F"
 CHOCOLATE: str = "\U0001F36B"
 PEANUT: str = "\U0001F95C"
-PEACE: str = "\U0000270C"
-HANG_LOOSE: str = "\U0001F919"
-PRINCESS: str = "\U0001F478"
-MONKEY: str = "\U0001F649"
-JUGGLE: str = "\U0001F939"
-STAR: str = "\U00002B50"
-MEMO: str = "\U0001F4DD"
-TONGUE: str = "\U0001F61B"
-CART: str = "\U0001F938"
 # FUNCTION DEFINITIONS
-
-
 def greet() -> None:
-    """Greets the Player and prompts them for their name."""
     global player 
     print("-------------------------------------------------------------------------------------------------------")
     player = input(f"|{EYES} Build an acai bowl {BOWL} and I'll tell you what freshman dorm you would most likely live in at UNC {EYES}|\n-------------------------------------------------------------------------------------------------------\n What is your name?: ")
 
 
 def one_question() -> str:
-    """A mini quiz that prompts the user to pick their favorite acai base."""
     global points 
     # Q1 
     v = True 
-    answer_q1 = input(f"Pick your base:{CART}\n A: Classic Acai\n B: Pitaya\n C: Green\n D: Blue Magic\n")
+    answer_q1 = input("Pick your base:\n A: Classic Acai\n B: Pitaya\n C: Green\n D: Blue Magic\n")
     while v is True:
         import random 
         if answer_q1 == "a":
-            points = random.randint(1, 4)
+            points = random.randint(1,4)
             v = False 
         if answer_q1 == "b":
-            points = random.randint(1, 4)
+            points = random.randint(1,4)
             v = False 
-        if answer_q1 == "c":
-            points = random.randint(1, 4)
+        if  answer_q1 == "c":
+            points = random.randint(1,4)
             v = False 
-        if answer_q1 == "d":
-            points = random.randint(1, 4)
+        if  answer_q1 == "d":
+            points = random.randint(1,4)
             v = False 
         if answer_q1 != "a" != answer_q1 != "b" != answer_q1 != "c" != answer_q1 != "d":
             answer_q1 = input(f"{RED_FLAG} invalid input! try again: ")
@@ -62,11 +49,10 @@ def one_question() -> str:
 
             
 def question_1() -> str:
-    """Question one of the quiz...ask user to pick their favorite base."""
     global points 
     # Q1 
     v = True 
-    answer_q1 = input(f"Pick your base:{TONGUE}\n A: Classic Acai\n B: Pitaya\n C: Green\n D: Blue Magic\n")
+    answer_q1 = input("Pick your base:\n A: Classic Acai\n B: Pitaya\n C: Green\n D: Blue Magic\n")
     while v is True:
         if answer_q1 == "a":
             points = 1
@@ -74,10 +60,10 @@ def question_1() -> str:
         if answer_q1 == "b":
             points = 2
             v = False 
-        if answer_q1 == "c":
+        if  answer_q1 == "c":
             points = 3
             v = False 
-        if answer_q1 == "d":
+        if  answer_q1 == "d":
             points = 4
             v = False 
         if answer_q1 != "a" != answer_q1 != "b" != answer_q1 != "c" != answer_q1 != "d":
@@ -88,7 +74,6 @@ def question_1() -> str:
 
 
 def question_2(x: int) -> int:
-    """Question 2 of the quiz...asks user if they want granola."""
     # Q2 
     v = True 
     answer_q2 = input(f"Granola?{WHEAT}\n A: YES\n B: noo\n")
@@ -98,7 +83,7 @@ def question_2(x: int) -> int:
             v = False 
         if answer_q2 == "b":
             x = x + 2
-            v = False 
+            V = False 
         if answer_q2 != "a" != answer_q2 != "b":
             answer_q2 = input(f"{RED_FLAG} invalid input! try again: ")
             v = True 
@@ -107,7 +92,6 @@ def question_2(x: int) -> int:
 
 
 def question_3() -> str:
-    """Question 3 of the quiz...asks user their first fruit topping."""
     global points 
     # Q3 
     v = True 
@@ -133,7 +117,6 @@ def question_3() -> str:
 
 
 def question_4() -> str:
-    """Question 4 of the quiz...asks user for their second fruit topping."""
     global points 
     # Q4 
     v = True
@@ -159,11 +142,10 @@ def question_4() -> str:
 
 
 def question_5() -> str:
-    """Question 5 of the quiz...asks user to choose a nutbutter."""
     global points 
     # Q5
     v = True 
-    answer_q5 = input(f"Choose a nut butter:{TONGUE}\n A: Nutella{CHOCOLATE}\n B: Peanut Butter{PEANUT}\n C: Almond Butter\n D: Cashew Butter\n")
+    answer_q5 = input(f"Choose a nut butter:\n A: Nutella{CHOCOLATE}\n B: Peanut Butter{PEANUT}\n C: Almond Butter\n D: Cashew Butter\n")
     while v is True:
         if answer_q5 == "a":
             points = points + 1
@@ -185,7 +167,6 @@ def question_5() -> str:
 
 
 def question_6() -> str:
-    """Question 6 of the quiz...asks user if they want honey."""
     global points 
     # Q6 
     v = True 
@@ -205,11 +186,10 @@ def question_6() -> str:
 
 
 def question_7() -> str:
-    """Last question of quiz...asks user for a fun add on..."""
     global points 
     # Q7 
     v = True
-    answer_q7 = input(f"Pick one fun add-on?{TONGUE}{CART}\n A: Coconut Flakes\n B: Flax Seeds\n C: Pumpkin Seeds\n D: Hemp Hearts\n")
+    answer_q7 = input("Pick one fun add-on?\n A: Coconut Flakes\n B: Flax Seeds\n C: Pumpkin Seeds\n D: Hemp Hearts\n")
     while v is True:
         if answer_q7 == "a":
             points = points + 1
@@ -231,56 +211,80 @@ def question_7() -> str:
 
 
 def main() -> None:
-    """Entrypoint of game and game loop."""
     global player 
     global points
-    greet()
+    i = 0
+    if i < 1:
+        print(greet())
+    i += 1
     starting_the_experience = True 
     v = True 
     while starting_the_experience is True:
         print(f"{player} to answer the questions, type your response in lowercase letters when asked!")
-        three_options = input(f"You have 3 options. Choose one:\n A: Leave the quiz{STAR}\n B: Start the quiz {STAR}\n C: Do the one question quiz instead!{STAR}\n")
+        three_options = input("You have 3 options. Choose one:\n A: Leave the quiz\n B: Start the quiz\n C: Do the one question quiz instead!\n")
         while v is True:
             if three_options == "a":
-                print(f"Goodbye, {player}! {PEACE}")
+                v = False
+                starting_the_experience = False
+                print(f"Goodbye, {player}!")
                 print(f"You had {points} points.") 
-                v = False 
-                starting_the_experience = False  
+                quit()
             if three_options == "c": 
-                print(f"Mini QUIZ TIME!!{MEMO}")
+                print("Mini QUIZ TIME!!")
                 one_question()
-            if points == 1:
-                print(f"You love a basic acai bowl...Granville {PRINCESS}")
-            if points == 2:
-                print(F"You keep it simple and classy...a scampus(south campus) dweller {HANG_LOOSE}")
-            if points == 3:
-                print(F"You're complicated...North Campus {MONKEY}")
-            if points == 4:
-                print(f"You like to juggle a lot at once...Cobb {JUGGLE}")    
+                if points == 1:
+                        print("You love a basic acai bowl...Granville")
+                if points == 2:
+                        print ("You keep it simple and classy...a scampus(south campus) dweller")
+                if points == 3:
+                        print("You're complicated...North Campus")
+                if points == 4:
+                        print("You like to juggle a lot at once...Cobb")    
             if three_options == "b":
                 print("Lets Start!")
                 v = False 
-                question_1()
-                question_2(points)
-                question_3()
-                question_4()
-                question_5()
-                question_6()
-                question_7()
+                i = 0 
+                if i < 1:
+                    question_1()
+                i += 1 
+                i = 0 
+                if i < 1:
+                    (question_2(points))
+                i += 1 
+                i = 0 
+                if i < 1:
+                    question_3()
+                i = 0 
+                if i < 1:
+                    question_4()
+                i += 1
+                i = 0 
+                if i < 1:
+                    question_5()
+                i += 1
+                i = 0 
+                if i < 1:
+                    question_6()
+                i += 1
+                i = 0 
+                if i < 1:
+                    question_7()
+                i += 1
                 if 6 <= points < 10:
-                    print(f"You love a basic acai bowl...Granville {PRINCESS}")
+                    print("You love a basic acai bowl...Granville")
                 if 10 <= points < 14:
-                    print(f"You keep it simple and classy...a scampus(south campus) dweller {HANG_LOOSE}")
+                    print ("You keep it simple and classy...a scampus(south campus) dweller")
                 if 14 <= points < 18:
-                    print(f"You're complicated...North Campus {MONKEY}")
+                    print("You're complicated...North Campus")
                 if 18 <= points < 25:
-                    print(f"You like to juggle a lot at once...Cobb {JUGGLE}")
+                    print("You like to juggle a lot at once...Cobb")
             x = input("Do you want to play again?: ")
             if x == "yes":
+                v = False
                 print(f"You had {points} points throughout the game which determined your campus!")
                 main()
             else:
-                print(f"You had {points} points throughout the game which determined your campus! Bye {PEACE}")
+                print(f"You had {points} points throughout the game which determined your campus!")
             v = False 
             starting_the_experience = False
     

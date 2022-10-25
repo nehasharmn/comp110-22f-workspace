@@ -242,10 +242,11 @@ def main() -> None:
         three_options = input(f"You have 3 options. Choose one:\n A: Leave the quiz{STAR}\n B: Start the quiz {STAR}\n C: Do the one question quiz instead!{STAR}\n")
         while v is True:
             if three_options == "a":
+                v = False
+                starting_the_experience = False
                 print(f"Goodbye, {player}! {PEACE}")
                 print(f"You had {points} points.") 
-                v = False 
-                starting_the_experience = False  
+                quit()
             if three_options == "c": 
                 print(f"Mini QUIZ TIME!!{MEMO}")
                 one_question()
@@ -277,6 +278,7 @@ def main() -> None:
                     print(f"You like to juggle a lot at once...Cobb {JUGGLE}")
             x = input("Do you want to play again?: ")
             if x == "yes":
+                v = False
                 print(f"You had {points} points throughout the game which determined your campus!")
                 main()
             else:

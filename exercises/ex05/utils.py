@@ -42,7 +42,3 @@ def sub (a_list: list[int], start_index: int, end_index: int ) -> list():
         x_list.append(a_list[start_index])
         start_index += 1 
     return x_list
-
-
-
-
